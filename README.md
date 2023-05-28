@@ -2,8 +2,6 @@
 
 ## Installation
 
-Make sure you've installed [Typescript](https://www.npmjs.com/package/typescript)
-
 Install the dependencies and devDependencies
 ```
 npm i
