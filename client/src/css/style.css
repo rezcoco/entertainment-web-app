@@ -296,7 +296,6 @@ input:-webkit-autofill:active{
 
 .container {
     display: flex;
-    justify-content: space-between;
     margin: 0 auto;
     padding: 2em;
     min-height: 100vh;
