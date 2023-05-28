@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="src/css/style.css">
+  
+  <title>Frontend Mentor | Entertainment web app</title>
+</head>
+<body>
+  <div class="__container">
+    <div class="error__container"></div>
+    <div class="__wrapper">
+      <div class="logo">
+        <img src="./assets/logo.svg" alt="">
+      </div>
+      <div class="login">
+        <form class="form">
+          <h1 class="fs-xxl">Login</h1>
+          <div class="input__wrapper">
+            <label class="email__wrapper">
+              <input type="text" name="email" id="email" placeholder="Email address">
+              <p class="fs-s alert red none">Can't be empty</p>
+            </label>
+            <label class="password__wrapper">
+              <input type="password" name="password" id="password" placeholder="Password">
+              <p class="fs-s alert red none">Can't be empty</p>
+            </label>
+          </div>
+          <button class="btn" type="submit">Login to your account</button>
+          <p class="fs-s">Don't have an account? <a class="red" href="/signup">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./src/js/script.js"></script>
+</body>
+</html>
