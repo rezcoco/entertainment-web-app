@@ -24,9 +24,12 @@ class AuthController {
                         httpOnly: true,
                     }).cookie('access', accessToken, {
                         httpOnly: true,
-                        maxAge: 15 * 60 * 1000
+                        maxAge: 15 * 60 * 1000,
+                        secure: true
                     }).cookie('refresh', refreshToken, {
                         httpOnly: true,
+                        maxAge: 1 * 24 * 60 * 60 * 1000,
+                        secure: true
                     }).json({ accessToken, refreshToken, userId: data.id })
                 }
                 return res.status(401).json({ message: 'Password incorrect'})
@@ -77,7 +80,7 @@ class AuthController {
 
                 if (userInfo && userInfo.refreshToken) {
                     const accessToken = await Password.accessToken()
-                    return res.status(200).cookie('access', accessToken, { httpOnly: true, maxAge: 2 * 1000}).send('Ok')
+                    return res.status(200).cookie('access', accessToken, { httpOnly: true, maxAge: 15 * 60 * 1000, secure: true}).send('Ok')
                 }
                 return res.sendStatus(401)
             }
