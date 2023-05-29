@@ -1,4 +1,4 @@
-(async () => {
+window.addEventListener('load', async () => {
   const api = '/api/v1/'
 
   async function logout() {
@@ -136,7 +136,7 @@
         const thumb__wrapper = createElement('div', 'thumb__wrapper')
         const img = createElement('img')
 
-        img.setAttribute('src', movie.thumbnail.trending.large)
+        img.setAttribute('src', movie.thumbnail.trending.small)
         img.setAttribute('alt', movie.title)
 
         thumb__wrapper.appendChild(img)
@@ -182,7 +182,7 @@
         const thumb__recommend = createElement('div', 'thumb__recommend')
         const thumb__wrapper = createElement('div', 'thumb__wrapper')
         const img = createElement('img')
-        img.setAttribute('src', movie.thumbnail.regular.medium)
+        img.setAttribute('src', movie.thumbnail.regular.small)
 
         thumb__wrapper.append(img)
         thumb__recommend.append(thumb__wrapper, overlayBg('r'), bookmark(movie, 'r'))
@@ -297,17 +297,15 @@
 
   async function init() {
     try {
-        const movies = Promise.all([fetch(api + 'trending'), fetch(api + 'recommend')])
+        const res = await fetch(api + 'all')
 
-        const res = await movies
-        const [ trending, recommend ] = res
-
-        if (trending.ok && recommend.ok) {
-            const movieTrending = await trending.json()
-            const movieRecommend = await recommend.json()
+        if (res.ok) {
+            const data = await res.json()
+            const trending = data.filter((movie) => movie.isTrending)
+            const recommend = data.filter((movie) => !movie.isTrending)
 
             setContainer()
-            return setElements(movieTrending, movieRecommend)
+            return setElements(trending, recommend)
         }
         return refresh(init)
     } catch (error) {
@@ -316,4 +314,4 @@
 }
 init()
 
-})()
+})

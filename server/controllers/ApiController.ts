@@ -32,22 +32,13 @@ class ApiController implements IApi {
         
         res.status(200).json(movies)
     }
-    public async trending(req: Request, res: Response): Promise<void> {
+    public async all(req: Request, res: Response): Promise<void> {
         const user: IUser | null = await User.findById(res.locals.user)
         const movies = data.map((movie) => {
             if (user && user.bookmark.includes(movie.id)) return { ...movie, isBookmarked: true}
             return movie
-        }).filter((movie) => movie?.isTrending)
+        })
         
-        res.status(200).json(movies)
-    }
-    public async recommend(req: Request, res: Response): Promise<void> {
-        const user: IUser | null = await User.findById(res.locals.user)
-        const movies = data.map((movie) => {
-            if (user && user.bookmark.includes(movie.id)) return { ...movie, isBookmarked: true} 
-            return movie
-        }).filter((movie) => !movie?.isTrending)
-
         res.status(200).json(movies)
     }
     public async search(req: Request, res: Response): Promise<void> {

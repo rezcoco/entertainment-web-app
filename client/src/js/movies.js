@@ -1,4 +1,4 @@
-(async () => {
+window.addEventListener('load', async () => {
   const api = '/api/v1/'
 
   async function logout() {
@@ -126,7 +126,7 @@
         const thumb__recommend = createElement('div', 'thumb__recommend')
         const thumb__wrapper = createElement('div', 'thumb__wrapper')
         const img = createElement('img')
-        img.setAttribute('src', movie.thumbnail.regular.medium)
+        img.setAttribute('src', movie.thumbnail.regular.small)
 
         thumb__wrapper.append(img)
         thumb__recommend.append(thumb__wrapper, overlayBg('r'), bookmark(movie, 'r'))
@@ -254,4 +254,4 @@
       }
   }
   init()
-})()
+})
