@@ -29,10 +29,10 @@ window.addEventListener('load', async () => {
   function setContainer() {
       return document.querySelector('body').innerHTML = `<div class="container">
       <aside class="sidebar">
-        <div class="logo">
+        <div role="banner" class="logo">
           <a href="/"><img src="./assets/logo.svg" alt="logo"></a>
         </div>
-        <nav class="navbar">
+        <nav role="navigation" class="navbar">
           <a href="/">
             <svg class="home active" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 0H1C.4 0 0 .4 0 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11H1c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1ZM19 0h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1Z" fill="#5A698F"/></svg>
           </a>
@@ -62,7 +62,7 @@ window.addEventListener('load', async () => {
             <input class="input__search fs-xl" type="text" name="s" id="search" placeholder="Search for movies or TV series" value="">
           </label>
         </form>
-        <div class="contents">
+        <div role="main" class="contents">
           <section class="trending">
             <h1 class="fs-xxl">Trending</h1>
             <div class="cards__wrapper">
