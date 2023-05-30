@@ -55,14 +55,14 @@ window.addEventListener('load', async () => {
           </div>
         </div>
       </aside>
-      <main>
+      <main role="main">
         <form class="search">
           <img class="logo__search" src="./assets/icon-search.svg" alt="logo search">
           <label class="input__label">
             <input class="input__search fs-xl" type="text" name="s" id="search" placeholder="Search for movies or TV series" value="">
           </label>
         </form>
-        <div role="main" class="contents">
+        <div class="contents">
           <section class="trending">
             <h1 class="fs-xxl">Trending</h1>
             <div class="cards__wrapper">
