@@ -50,7 +50,9 @@ window.addEventListener('load', async () => {
           <img src="./assets/image-avatar.png" alt="avatar">
         </div>
         <div class="logout__container none">
-          <div class="logout"><p>Logout</p></div>
+          <div class="logout">
+            <img src="./assets/logout.svg" alt="logout">
+          </div>
         </div>
       </aside>
       <main role="main">
