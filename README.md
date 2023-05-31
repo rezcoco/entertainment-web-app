@@ -28,3 +28,4 @@ Run the server with this command
 ```
 npm start
 ```
+### __Important note: change the value of `secure` to `false` on `controller/AuthController.ts` if you're on http connection__
